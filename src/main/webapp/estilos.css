@@ -1,0 +1,195 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #e0f7fa; /* Color de fondo de la página */
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #00796b; /* Color de la barra lateral */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    color: white;
+    height: 100vh; /* Llenar toda la altura de la pantalla */
+    position: fixed; /* Fijar la barra lateral */
+    transition: transform 0.3s ease; /* Transición suave para el despliegue */
+    top: 0; /* Asegurar que esté alineada en la parte superior */
+    left: 0; /* Alinear a la izquierda */
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%); /* Ocultar la barra lateral */
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin: 0 0 20px;
+    font-size: 24px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 12px;
+    display: block;
+    border-radius: 4px;
+    transition: background 0.3s;
+    text-align: center;
+}
+
+.sidebar ul li a:hover {
+    background-color: #004d40; /* Efecto hover */
+}
+
+.main-content {
+    flex: 1;
+    padding: 30px;
+    margin-left: 250px; /* Espacio para la barra lateral */
+    background-color: #b2dfdb; /* Color de fondo de la pantalla principal */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    min-height: 100vh; /* Asegurar que el contenido principal llene la pantalla */
+    transition: margin-left 0.3s ease; /* Transición suave para el contenido */
+    display: flex; /* Usar flexbox para centrar el contenido */
+    flex-direction: column; /* Dirección de la columna */
+    align-items: center; /* Centrar horizontalmente */
+    justify-content: center; /* Centrar verticalmente */
+    text-align: center; /* Centrar el texto */
+}
+
+.main-content.shift {
+    margin-left: 0; /* Sin margen cuando la barra lateral está oculta */
+}
+
+.toggle-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000; /* Asegurar que el botón esté por encima de la barra lateral */
+}
+
+h1 {
+    font-size: 36px; /* Tamaño de fuente del encabezado */
+    margin-bottom: 10px; /* Espacio debajo del encabezado */
+}
+
+p {
+    font-size: 18px; /* Tamaño de fuente del párrafo */
+    max-width: 600px; /* Ancho máximo del párrafo */
+    line-height: 1.6; /* Espaciado de línea */
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%; /* Barra lateral ocupa todo el ancho en pantallas pequeñas */
+        height: auto; /* Altura automática */
+        position: relative; /* Posición relativa en pantallas pequeñas */
+    }
+    .main-content {
+        margin-left: 0; /* Sin margen en pantallas pequeñas */
+    }
+}
+
+table {
+    width: 80%; /* Ancho de la tabla */
+    margin: 20px auto; /* Centrar la tabla */
+    border-collapse: collapse; /* Colapsar bordes */
+    background-color: white; /* Color de fondo de la tabla */
+}
+
+th, td {
+    border: 1px solid #00796b; /* Bordes de la tabla */
+    padding: 10px; /* Espaciado interno */
+    text-align: center; /* Centrar texto */
+}
+
+th {
+    background-color: #00796b; /* Color de fondo del encabezado */
+    color: white; /* Color del texto del encabezado */
+}
+
+button {
+    background-color: #00796b; /* Color de fondo de los botones */
+    color: white; /* Color del texto de los botones */
+    border: none; /* Sin borde */
+    padding: 5px 10px; /* Espaciado interno */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar */
+    transition: background 0.3s; /* Transición para el efecto hover */
+}
+
+button:hover {
+    background-color: #004d40; /* Efecto hover en botones */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Altura completa de la ventana */
+    background-color: #e0f7fa; /* Color de fondo de la página */
+}
+
+.container {
+    background-color: #b2dfdb; /* Color de fondo del contenedor */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Centrar el texto dentro del contenedor */
+    max-width: 400px; /* Ancho máximo del contenedor */
+    width: 100%; /* Ancho completo en pantallas pequeñas */
+}
+
+h1 {
+    font-size: 36px; /* Tamaño del encabezado principal */
+    margin-bottom: 10px; /* Espacio debajo del encabezado */
+    color: #004d40; /* Color del texto */
+}
+
+h2 {
+    font-size: 24px; /* Tamaño del subencabezado */
+    margin-bottom: 20px; /* Espacio debajo del subencabezado */
+    color: #ffffff; /* Color del texto */
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+    width: 100%; /* Ancho completo de los campos */
+    padding: 12px; /* Relleno interno de los campos */
+    margin: 10px 0; /* Espaciado entre los campos */
+    border: 1px solid #00796b; /* Borde del campo */
+    border-radius: 4px; /* Bordes redondeados */
+    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total */
+}
+
+input[type="submit"] {
+    background-color: #00796b; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background 0.3s; /* Transición suave para el fondo */
+}
+
+input[type="submit"]:hover {
+    background-color: #004d40; /* Color de fondo al pasar el cursor */
+}
